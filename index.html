@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vincent & Elizabeth</title>
+    <style>
+	@font-face {
+    font-family: 'Chosunilbo_myungjo';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Chosunilbo_myungjo.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'ChosunSg';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunSg.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+  margin: 0;
+  font-family: 'Chosunilbo_myungjo', serif; 
+}
+
+/* ----- 1. 오버레이 시작 화면 ----- */
+#splash-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calc(var(--vh, 1vh) * 100);
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #41220E;
+  color: #FFFFFF;
+  transition: opacity 1.5s ease-in-out;
+  padding: 15vh 10vw;
+  box-sizing: border-box;
+}
+#splash-screen.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+#splash-screen > * {
+  text-align: center;
+}
+#splash-screen .verse {
+  font-size: clamp(14px, 4vw, 20px);
+  margin-bottom: 0;
+}
+#splash-screen .names {
+  font-size: clamp(24px, 5.8vw, 50px);
+  line-height: 1.8;
+  font-weight: normal;
+  margin-bottom: 0;
+}
+#splash-screen .details {
+  font-size: clamp(16px, 4.8vw, 28px);
+  line-height: 1.6;
+}
+
+/* ----- 2. 스크롤 콘텐츠 기본 스타일 ----- */
+.screen {
+  height: calc(var(--vh, 1vh) * 100);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+/* ----- 두 번째 화면 ----- */
+#main-content {
+    background-color: #41220E;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 0 40px;
+}
+.scripture-body {
+    font-size: clamp(16px, 4.2vw, 22px);
+    line-height: 1.8;
+    margin-bottom: 30px;
+    word-break: keep-all;
+}
+.scripture-reference {
+    font-size: clamp(14px, 3.5vw, 18px);
+}
+
+/* ----- 세 번째 화면 ----- */
+#invitation {
+  background-color: #FFFFFF;
+  color: #41220E;
+  justify-content: flex-start;
+  padding-top: 10vh;
+}
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%; 
+    max-width: 320px;
+}
+.invitation-title {
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+    font-weight: normal;
+    line-height: 30px;
+    margin-bottom: 50px;
+}
+.intro-text {
+    width: 100%;
+    text-align: center;
+    font-size: 15px;
+    line-height: 30px;
+    margin-bottom: 80px;
+}
+.family-info {
+    text-align: center;
+    margin-bottom: 80px;
+}
+.family-info p {
+    font-size: 15px;
+    line-height: 30px; 
+    white-space: nowrap; /* 수정: 줄바꿈 방지 */
+}
+.highlight-name {
+    font-size: 18px;
+}
+.details-group {
+    font-family: 'ChosunSg', sans-serif;
+    font-size: 15px;
+    line-height: 2; 
+    text-align: left;
+    width: 100%;
+}
+.details-group strong {
+    font-weight: 700;
+    margin-right: 15px;
+}
+</style>
+</head>
+<body>
+
+    <section id="splash-screen" class="screen">
+        <p class="verse">Rom 8:28</p>
+        <h1 class="names">
+            김인배 빈첸시오<br>
+            &<br>
+            국지현 엘리사벳
+        </h1>
+        <p class="details">
+            2026년 4월 11일 토요일 오후 12시 30분<br>
+            작은형제회 수도원 성당
+        </p>
+    </section>
+
+    <main id="scroll-container">
+        <section id="main-content" class="screen">
+            <p class="scripture-body">
+                하느님을 사랑하는 이들,<br>
+                그분의 계획에 따라 부르심을 받은 이들에게는<br>
+                모든 것이 함께 작용하여<br>
+                선을 이룬다는 것을 우리는 압니다.
+            </p>
+            <p class="scripture-reference">
+                로마 8,28
+            </p>
+        </section>
+
+        <section id="invitation" class="screen">
+            <div class="content-wrapper">
+                <h2 class="invitation-title">Invitation</h2>
+                <p class="intro-text">
+                    주님께서 당신의 신비로운 섭리로<br>
+                    저희 안에 좋은 일을 시작하셨습니다.<br>
+                    성가정의 모범을 따라 그 일의 완성을 향하여<br>
+                    저희가 딛는 첫 걸음에<br>
+                    많은 축복 부탁드립니다.
+                </p>
+                <div class="family-info">
+                    <p>김현소 토마스 · 전순희 실비아의 장남 <span class="highlight-name">인배</span> 빈첸시오</p>
+                    <p>국경택 안드레아 · 백인화 플로라의 장녀 <span class="highlight-name">지현</span> 엘리사벳</p>
+                </div>
+                <div class="details-group">
+                    <p><strong>일시</strong> 2026년 4월 11일 토요일 오후 12시 30분</p>
+                    <p><strong>장소</strong> 작은형제회 수도원 성당</p>
+                    <p><strong>주소</strong> 서울 중구 정동길 9 (정동 17-1)</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+  const splashScreen = document.getElementById('splash-screen');
+
+  // --- 안정적인 화면 높이를 계산하는 코드 ---
+  const setRealVh = () => {
+    document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
+  };
+  window.addEventListener('resize', setRealVh);
+  setRealVh();
+
+  let isHidden = false;
+  let timeoutId = null; 
+
+  // 시작 화면을 숨기는 함수
+  function hideSplashScreen() {
+    if (isHidden) return;
+    isHidden = true;
+    clearTimeout(timeoutId);
+    splashScreen.classList.add('hidden');
+
+    // ★★★ 수정된 부분 ★★★
+    // 스크롤 위치를 강제로 맨 위(0, 0)로 이동시킵니다.
+    window.scrollTo(0, 0);
+  }
+
+  // 3초 후 자동으로 화면 전환
+  timeoutId = setTimeout(hideSplashScreen, 3000);
+
+  // 화면을 클릭하면 즉시 전환
+  splashScreen.addEventListener('click', hideSplashScreen);
+});
+</script>
+</body>
+</html>
