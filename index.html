@@ -38,7 +38,7 @@ body {
   background-color: #41220E;
   color: #FFFFFF;
   transition: opacity 1.5s ease-in-out;
-  padding: 15vh 25px; /* 수정: 좌우 여백 단위를 vw에서 고정값으로 변경 */
+  padding: 15vh 25px;
   box-sizing: border-box;
 }
 #splash-screen.hidden {
@@ -53,13 +53,13 @@ body {
   margin-bottom: 0;
 }
 #splash-screen .names {
-  font-size: clamp(24px, 5.8vw, 44px); /* 수정: 최대 크기 살짝 줄임 */
+  font-size: clamp(24px, 5.8vw, 44px);
   line-height: 1.8;
   font-weight: normal;
   margin-bottom: 0;
 }
 #splash-screen .details {
-  font-size: clamp(16px, 4.8vw, 24px); /* 수정: 최대 크기 살짝 줄임 */
+  font-size: clamp(16px, 4.8vw, 24px);
   line-height: 1.6;
 }
 
@@ -72,7 +72,7 @@ body {
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
-  padding: 0 25px; /* 수정: 모든 스크롤 화면에 공통 좌우 여백 적용 */
+  padding: 0 25px;
 }
 
 /* ----- 두 번째 화면 ----- */
@@ -91,7 +91,7 @@ body {
     font-size: clamp(14px, 3.5vw, 18px);
 }
 
-/* ----- 세 번째 화면 ----- */
+/* ----- 세 번째 화면 (Z폴드 대응 수정) ----- */
 #invitation {
   background-color: #FFFFFF;
   color: #41220E;
@@ -102,13 +102,13 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%; /* 수정: 너비를 100%로 설정하고 부모의 여백을 따름 */
-    max-width: 380px; /* 수정: 최대 너비 증가 */
+    width: 100%;
+    max-width: 500px; /* 수정: 콘텐츠 최대 너비를 늘려 줄바꿈 방지 */
 }
 .invitation-title {
     width: 100%;
     text-align: center;
-    font-size: 20px;
+    font-size: clamp(18px, 4vw, 22px); /* 수정: 반응형 폰트 적용 */
     font-weight: normal;
     line-height: 30px;
     margin-bottom: 50px;
@@ -116,7 +116,7 @@ body {
 .intro-text {
     width: 100%;
     text-align: center;
-    font-size: 15px;
+    font-size: clamp(14px, 3.5vw, 16px); /* 수정: 반응형 폰트 적용 */
     line-height: 30px;
     margin-bottom: 80px;
 }
@@ -125,19 +125,22 @@ body {
     margin-bottom: 80px;
 }
 .family-info p {
-    font-size: 14px; /* 수정: 폰트 크기를 살짝 줄여 줄바꿈 방지 */
+    font-size: clamp(14px, 3.2vw, 16px); /* 수정: 반응형 폰트 적용 */
     line-height: 30px; 
     white-space: nowrap; 
 }
 .highlight-name {
-    font-size: 17px; /* 수정: 폰트 크기 비례하여 조정 */
+    font-size: clamp(16px, 3.8vw, 19px); /* 수정: 반응형 폰트 적용 */
 }
 .details-group {
     font-family: 'ChosunSg', sans-serif;
-    font-size: 15px;
     line-height: 2; 
     text-align: left;
     width: 100%;
+}
+.details-group p {
+    font-size: clamp(14px, 3.5vw, 16px); /* 수정: 반응형 폰트 적용 */
+    white-space: nowrap; /* 수정: '30분' 줄바꿈 방지 */
 }
 .details-group strong {
     font-weight: 700;
@@ -232,3 +235,4 @@ document.addEventListener('DOMContentLoaded', function() {
 </body>
 
 </html>
+
