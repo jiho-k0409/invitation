@@ -38,7 +38,7 @@ body {
   background-color: #41220E;
   color: #FFFFFF;
   transition: opacity 1.5s ease-in-out;
-  padding: 15vh 10vw;
+  padding: 15vh 25px; /* 수정: 좌우 여백 단위를 vw에서 고정값으로 변경 */
   box-sizing: border-box;
 }
 #splash-screen.hidden {
@@ -53,13 +53,13 @@ body {
   margin-bottom: 0;
 }
 #splash-screen .names {
-  font-size: clamp(24px, 5.8vw, 50px);
+  font-size: clamp(24px, 5.8vw, 44px); /* 수정: 최대 크기 살짝 줄임 */
   line-height: 1.8;
   font-weight: normal;
   margin-bottom: 0;
 }
 #splash-screen .details {
-  font-size: clamp(16px, 4.8vw, 28px);
+  font-size: clamp(16px, 4.8vw, 24px); /* 수정: 최대 크기 살짝 줄임 */
   line-height: 1.6;
 }
 
@@ -72,6 +72,7 @@ body {
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
+  padding: 0 25px; /* 수정: 모든 스크롤 화면에 공통 좌우 여백 적용 */
 }
 
 /* ----- 두 번째 화면 ----- */
@@ -79,7 +80,6 @@ body {
     background-color: #41220E;
     color: #FFFFFF;
     text-align: center;
-    padding: 0 40px;
 }
 .scripture-body {
     font-size: clamp(16px, 4.2vw, 22px);
@@ -102,8 +102,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 80%; 
-    max-width: 320px;
+    width: 100%; /* 수정: 너비를 100%로 설정하고 부모의 여백을 따름 */
+    max-width: 380px; /* 수정: 최대 너비 증가 */
 }
 .invitation-title {
     width: 100%;
@@ -125,12 +125,12 @@ body {
     margin-bottom: 80px;
 }
 .family-info p {
-    font-size: 15px;
+    font-size: 14px; /* 수정: 폰트 크기를 살짝 줄여 줄바꿈 방지 */
     line-height: 30px; 
-    white-space: nowrap; /* 수정: 줄바꿈 방지 */
+    white-space: nowrap; 
 }
 .highlight-name {
-    font-size: 18px;
+    font-size: 17px; /* 수정: 폰트 크기 비례하여 조정 */
 }
 .details-group {
     font-family: 'ChosunSg', sans-serif;
@@ -230,4 +230,5 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 </body>
+
 </html>
